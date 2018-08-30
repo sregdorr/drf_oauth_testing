@@ -1,0 +1,97 @@
+{
+	"variables": [],
+	"info": {
+		"name": "DRF Oauth Testing",
+		"_postman_id": "61fded24-08fc-45d6-618a-79aa37fb57ae",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GET /api/vehicles",
+			"request": {
+				"url": "{{host}}/api/vehicles/",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer TZfcLbsV2FHBdMbsznah80owLI3vlF",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"petName\": \"Tuff\",\n\t\"birthDate\": 123\n\t\"_species\": \"\",\n\t\"_owner\": \"\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "POST /o/token",
+			"request": {
+				"url": "http://localhost:8000/o/token/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/x-www-form-urlencoded",
+						"description": ""
+					},
+					{
+						"key": "Authorization",
+						"value": "Basic d2tOTGZKUDFobVk4UGVHSGdqMFlvU3RvekQ2ZWRNUFAyVXlXZTRXaDpnNm16WlFreHc5N29tcVVxeTZ4UUhDSVNKUWdrdEJDTGNWVmQwcm5nNWk2QmQxR0xwQlphb0VWd3lmTlZNVkhwMUNDSkZTYUFZcGZRelV4eWNxTjZOem10QTRvQVIxaUVqQ2RibUVIVTl1WWJiamJQcjVHRzJVQnUxUkxlcXpVTw==",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "text"
+						},
+						{
+							"key": "username",
+							"value": "krodgers",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "changeme",
+							"type": "text"
+						}
+					]
+				},
+				"description": "Generated from a curl request: \ncurl -X POST -d \\\"grant_type=password&username=krodgers&password=changeme\\\" -u \\\"wkNLfJP1hmY8PeGHgj0YoStozD6edMPP2UyWe4Wh:g6mzZQkxw97omqUqy6xQHCISJQgktBCLcVVd0rng5i6Bd1GLpBZaoEVwyfNVMVHp1CCJFSaAYpfQzUxycqN6NzmtA4oAR1iEjCdbmEHU9uYbbjbPr5GG2UBu1RLeqzUO\\\" http://localhost:8000/o/token/"
+			},
+			"response": []
+		},
+		{
+			"name": "POST /users/register",
+			"request": {
+				"url": "{{host}}/api/users/register/",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"username\": \"rperez\",\n\t\"password\": \"changeme\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
